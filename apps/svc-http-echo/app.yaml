@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/Smitty-0881/helm-charts.git
     targetRevision: main
-    chart: svc-http-echo
+    path: svc-http-echo
     helm:
       valueFiles:
-        - ../../apps/svc-http-echo/values.yaml
+        - values.yaml
   destination:
     server: https://192.168.4.95:16443
     namespace: default
@@ -19,3 +19,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
