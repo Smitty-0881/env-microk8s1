@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: dev
+  namespace: argocd
+spec:
+  description: Development project for microk8s1 cluster
+  sourceRepos:
+    - 'https://github.com/Smitty-0881/*'         # allow all your GitHub repos
+  destinations:
+    - namespace: '*'
+      server: https://192.168.4.95:16443         # microk8s1 cluster
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
