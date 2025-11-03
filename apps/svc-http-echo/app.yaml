@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/Smitty-0881/helm-charts.git
     targetRevision: main
-    path: svc-http-echo
+    chart: svc-http-echo         # ✅ use "chart", not a path under env repo
     helm:
       valueFiles:
-        - values.yaml
+        - values.yaml            # ✅ path relative to the chart
   destination:
     server: https://192.168.4.95:16443
     namespace: default
