@@ -9,16 +9,16 @@ spec:
         repoURL: https://github.com/Smitty-0881/env-microk8s1.git
         revision: main
         directories:
-          - path: apps/*         # ✅ This scans each subdirectory
+          - path: apps/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{path.basename}}-microk8s2'
     spec:
       project: default
       source:
         repoURL: https://github.com/Smitty-0881/helm-charts.git
         targetRevision: main
-        path: '{{path.basename}}'   # use subdirectory name as chart path
+        path: '{{path.basename}}'
         helm:
           valueFiles:
             - values.yaml
