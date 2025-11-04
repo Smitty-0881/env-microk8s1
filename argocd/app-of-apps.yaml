@@ -10,11 +10,12 @@ spec:
         revision: main
         directories:
           - path: apps/*
+          - path: argocd/projects/*
   template:
     metadata:
       name: '{{path.basename}}-microk8s1'
     spec:
-      project: default
+      project: dev
       source:
         repoURL: https://github.com/Smitty-0881/helm-charts.git
         targetRevision: main
